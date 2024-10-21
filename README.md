@@ -5,6 +5,10 @@ PyTorch Implementation on Paper [NeurIPS 2024] [DiffPO: A causal diffusion model
 ## Introduction
 In this work, we propose a causal diffusion model called DiffPO, which is carefully designed for reliable inferences in medicine by learning the distributions of potential outcomes. 
 
+![Overview](figure/overview.svg)
+
+
+
 
 ## Setup
 ### Installation:
@@ -16,8 +20,24 @@ numpy 1.24.3`
 ### Getting started:
 
 
+#### Prerequisites:
+Before running the experiments, download datasets and preprocessing them. 
+
+[IHDP dataset](https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets)
+
+[ACIC2016](https://jenniferhill7.wixsite.com/acic-2016/competition)
+
+[ACIC2018](https://www.synapse.org/Synapse:syn11294478/wiki/486304)
+
+Organize the datasets into their respective folders (`dataset_mask` and `dataset_norm_data`), following the ACIC2018 dataset example below.
+
 #### Training on ACIC2018 (as an example):
 
+
+The original downloaded data are preprocessed using `load_acic2018` and stored in the `acic2018_mask` and `acic2018_norm_data` folders.
+The default hyperparameters are set in `./config/acic2018.yaml`.
+
+An example of running DiffPO is given by `./script_acic2018.sh`.
 
 
 
@@ -33,4 +53,4 @@ numpy 1.24.3`
 
 
 ## Acknowledgement
-This repo is based on the implementation of [CSDI](https://github.com/ermongroup/CSDI).
+This repo is based on the implementation of [CSDI](https://github.com/ermongroup/CSDI) and [CATENets](https://github.com/AliciaCurth/CATENets/tree/main).
