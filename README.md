@@ -5,7 +5,10 @@ PyTorch Implementation on Paper [NeurIPS 2024] [DiffPO: A causal diffusion model
 ## Introduction
 In this work, we propose a causal diffusion model called DiffPO, which is carefully designed for reliable inferences in medicine by learning the distributions of potential outcomes. 
 
-<img src="https://github.com/yccm/DiffPO/tree/main/figure/overview.png" width=95% height=95%>
+![Overview](figure/overview.svg)
+
+
+
 
 ## Setup
 ### Installation:
