@@ -19,19 +19,31 @@ numpy 1.24.3`
 #### Prerequisites:
 Before running the experiments, download datasets and preprocessing them. 
 
-[IHDP dataset](https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets)
+[IHDP dataset](https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets) 
 
-[ACIC2016](https://jenniferhill7.wixsite.com/acic-2016/competition)
+[ACIC2016](https://jenniferhill7.wixsite.com/acic-2016/competition) 
 
 [ACIC2018](https://www.synapse.org/Synapse:syn11294478/wiki/486304)
 
 Organize the datasets into their respective folders (`dataset_mask` and `dataset_norm_data`), following the ACIC2018 dataset example below.
 
-#### Training on ACIC2018 (as an example):
+#### Training example (on ACIC2018 dataset):
 
 
-The original downloaded data are preprocessed using `load_acic2018` and stored in the `acic2018_mask` and `acic2018_norm_data` folders.
-The default hyperparameters are set in `./config/acic2018.yaml`.
+The original downloaded data are preprocessed using `load_acic2018.ipynb` and stored in the `acic2018_mask` and `acic2018_norm_data` folders.
+```
+data_acic2018/
+├── counterfactuals/
+│   ├── <id0>_cf.csv
+│   ├── ...
+│   └── <id23>_cf.csv
+├── ids.csv
+├── x.csv
+├── load_acic2018.ipynb
+├── acic2018_norm_data/
+└── acic2018_mask/
+```
+The default hyperparameters are set in `./config/acic2018.yaml`. 
 
 An example of running DiffPO is given by `./script_acic2018.sh`.
 
