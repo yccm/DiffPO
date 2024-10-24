@@ -3,8 +3,8 @@ PyTorch Implementation on Paper [NeurIPS 2024] [DiffPO: A causal diffusion model
 
 
 ## Introduction
-In this work, we propose a causal diffusion model called DiffPO, which is carefully designed for reliable inferences in medicine by learning the distributions of potential outcomes. 
-
+![Overview](figure/overview.png)
+In this work, we propose a causal diffusion model, *DiffPO*, which is carefully designed for reliable inferences in medicine by learning the distributions of potential outcomes. In our *DiffPO*, we leverage a tailored conditional denoising diffusion model and address the selection bias through an orthogonal diffusion loss.
 
 ## Setup
 ### Installation:
@@ -17,20 +17,18 @@ numpy 1.24.3`
 
 
 #### Prerequisites:
-Before running the experiments, download datasets and preprocessing them. 
-
-[IHDP dataset](https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets) 
-
-[ACIC2016](https://jenniferhill7.wixsite.com/acic-2016/competition) 
-
+Before running the experiments, download datasets [IHDP dataset](https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets),
+[ACIC2016](https://jenniferhill7.wixsite.com/acic-2016/competition), 
 [ACIC2018](https://www.synapse.org/Synapse:syn11294478/wiki/486304)
-
-Organize the datasets into their respective folders (`dataset_mask` and `dataset_norm_data`), following the ACIC2018 dataset example below.
-
-#### Training example (on ACIC2018 dataset):
+ and preprocessing them. 
 
 
-The original downloaded data are preprocessed using `load_acic2018.ipynb` and stored in the `acic2018_mask` and `acic2018_norm_data` folders.
+Organize the datasets into their respective folders (`dataset_mask` and `dataset_norm_data`), following the example below.
+
+#### Training example:
+
+
+The original downloaded data (ACIC2018 dataset) are preprocessed using `load_acic2018.ipynb` and stored in the `acic2018_mask` and `acic2018_norm_data` folders.
 ```
 data_acic2018/
 ├── counterfactuals/
